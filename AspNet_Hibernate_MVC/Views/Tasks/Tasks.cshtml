@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Tasks";
+
+}
+
+<h1>Tasks</h1>
+
+@foreach (Entities.Task task in Model)
+{
+    <div>
+            <div>@task.Name</div>
+            <a href="@Url.Action("DeleteTask", "Tasks", task.Id)">Delete</a>
+    </div>
+}
+
+@*<h2>New task</h2>
+    <form>
+    <input name="taskName" placeholder="Task name" />
+    <button name="submitTaskButton">
+    Submit
+    </button>
+    </form>*@
